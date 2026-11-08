@@ -1,0 +1,8 @@
+theme = "catppuccin_mocha"
+
+[editor]
+auto-format = false
+
+[editor.file-picker]
+hidden = false
+git-ignore = false

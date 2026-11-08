@@ -1,0 +1,65 @@
+[language-server.ocamllsp]
+command = "dune"
+args = ["tools", "exec", "ocamllsp"]
+
+[[language]]
+name = "markdown"
+formatter = { command = "rumdl", args = ["fmt", "--stdin", "--no-cache", "--quiet"] }
+auto-format = true
+
+[[language]]
+name = "json"
+formatter = { command = "jaq", args = ["."] }
+
+[[language]]
+name = "typst"
+formatter = { command = "typstyle", args = ["--wrap-text=fill"] }
+auto-format = true
+
+[[language]]
+name = "python"
+language-servers = ["ty", "ruff"]
+
+[language-server.ty]
+command = "uvx"
+args = ["ty", "server"]
+
+[language-server.ty.config]
+diagnosticMode = "workspace"
+
+[language-server.ruff]
+command = "uvx"
+args = ["ruff", "server"]
+
+[[language]]
+name = "javascript"
+language-servers = ["tsgo"]
+
+[[language]]
+name = "typescript"
+language-servers = ["tsgo"]
+
+[language-server.tsgo]
+# command = "tsgo"
+command = "tsc"
+args = ["--lsp"]
+
+[[language]]
+name = "c-sharp"
+language-servers = ["roslyn-language-server"]
+
+[language-server.roslyn-language-server]
+command = "roslyn-language-server"
+args = ["--stdio", "--autoLoadProjects"]
+
+[language-server.pkl-lsp]
+config = { pkl = { cli = { path = "/opt/homebrew/bin/pkl" } } }
+environment = { "PATH" = "/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin" }
+
+[[language]]
+name = "hcl"
+language-servers = ["tofu-ls"]
+
+[language-server.tofu-ls]
+command = "tofu-ls"
+args = ["serve"]

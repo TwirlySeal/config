@@ -1,0 +1,4 @@
+font-family = Cascadia Mono NF
+theme = Catppuccin Mocha
+font-size = 15
+command=/opt/homebrew/bin/nu --config-home "~/.config/nushell"
