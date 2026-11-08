@@ -7,6 +7,8 @@
 {{- if eq .chezmoi.os "windows" }}
 .config/ghostty
 .config/nushell
+.config/spotify-player
+.config/gh
 {{- end }}
 
 # macOS
