@@ -1,4 +1,13 @@
 .config/nushell/history.txt
 
+{{- if ne .chezmoi.os "darwin" }}
+.config/aerospace
+{{- end }}
+
+{{- if eq .chezmoi.os "windows" }}
+.config/ghostty
+.config/nushell
+{{- end }}
+
 # macOS
 .DS_Store
