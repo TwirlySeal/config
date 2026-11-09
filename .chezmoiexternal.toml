@@ -1,0 +1,11 @@
+# 168h = 1 week
+
+[".config/hypr/catppuccin-hyprland"]
+type = "git-repo"
+url = "https://github.com/catppuccin/hyprland"
+refreshPeriod = "168h"
+
+[".config/hypr/catppuccin-hyprtoolkit"]
+type = "git-repo"
+url = "https://github.com/catppuccin/hyprtoolkit"
+refreshPeriod = "168h"

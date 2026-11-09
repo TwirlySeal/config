@@ -11,5 +11,13 @@
 .config/gh
 {{- end }}
 
+{{- if ne .chezmoi.os "linux" }}
+.config/hypr
+.config/yazi
+.config/xdg-desktop-portal
+.config/xdg-desktop-portal-termfilechooser
+.config/legendary
+{{- end }}
+
 # macOS
 .DS_Store

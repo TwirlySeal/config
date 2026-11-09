@@ -1,4 +1,8 @@
 font-family = Cascadia Mono NF
 theme = Catppuccin Mocha
 font-size = 15
+{{ if eq .chezmoi.os "darwin" -}}
 command=/opt/homebrew/bin/nu --config-home "~/.config/nushell"
+{{ else if eq .chezmoi.os "linux" -}}
+command = /usr/bin/nu
+{{- end -}}
