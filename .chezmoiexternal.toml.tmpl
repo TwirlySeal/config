@@ -1,3 +1,4 @@
+{{ if eq .chezmoi.os "linux" -}}
 # 168h = 1 week
 
 [".config/hypr/catppuccin-hyprland"]
@@ -9,3 +10,5 @@ refreshPeriod = "168h"
 type = "git-repo"
 url = "https://github.com/catppuccin/hyprtoolkit"
 refreshPeriod = "168h"
+
+{{- end -}}
