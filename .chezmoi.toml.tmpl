@@ -1,0 +1,8 @@
+[merge]
+command = "nu"
+args = [
+    "~/.config/nushell/hx-merge.nu",
+    "{{ "{{" }} .Destination {{ "}}" }}",
+    "{{ "{{" }} default \"/dev/null\" .Source {{ "}}" }}",
+    "{{ "{{" }} .Target {{ "}}" }}",
+]
