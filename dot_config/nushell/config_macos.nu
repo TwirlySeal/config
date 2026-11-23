@@ -14,15 +14,11 @@ path add [
 
 let env_record = {
   from_string: {|s|
-    $s
-    | split row (char esep)
-    | path expand --no-symlink
+    $s | split row (char esep)
   }
 
   to_string: { |v|
-    $v
-    | path expand --no-symlink
-    | str join (char esep)
+    $v | str join (char esep)
   }
 }
 
@@ -31,8 +27,10 @@ $env.ENV_CONVERSIONS = $env.ENV_CONVERSIONS | merge {
   "INFOPATH": $env_record
 }
 
-$env.MANPATH = ($env.MANPATH? | default [] | append "/opt/homebrew/share/man")
-$env.INFOPATH = ($env.INFOPATH? | default [] | append "/opt/homebrew/share/info")
+# Empty string is appended so it serialises with a trailing colon, needed to
+# still include the default system paths.
+$env.MANPATH = ($env.MANPATH? | default [] | append "/opt/homebrew/share/man" "")
+$env.INFOPATH = ($env.INFOPATH? | default [] | append "/opt/homebrew/share/info" "")
 
 path add [
   "~/go/bin"
