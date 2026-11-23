@@ -39,9 +39,9 @@ def pdoc [
   file: path
   ...args
 ] {
-  let themes = $nu.default-config-dir | path join "themes"
-  let css_theme = $themes | path join "theme.css"
-  let syntax_theme = $themes | path join "mocha.theme"
+  const themes = $nu.default-config-dir | path join "themes"
+  const css_theme = $themes | path join "theme.css"
+  const syntax_theme = $themes | path join "mocha.theme"
 
   let output = $file
   | path parse
