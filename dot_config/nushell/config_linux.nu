@@ -1,5 +1,7 @@
 use std/util "path add"
 
+alias hx = helix
+
 $env.EDITOR = "helix"
 $env.config.buffer_editor = "helix"
 
